@@ -1,11 +1,11 @@
-**** Goal ****
+** Goal **
 
 The objective of the project is to dockerize mediawiki application from scratch and deploy the mediawiki container in Kubernetes using Helm charts.
 Currently this project is working using Docker containers. Creation of helm charts is still in progress.
 
 
 
-**** Environment details ****
+** Environment details **
 
 Operation System: Windows 10 (Docker Desktop 3.0.4)
 Docker version: 20.10.2
@@ -13,7 +13,7 @@ Kubernetes version: v1.19.3
 
 
 
-**** Folder Structure ****
+** Folder Structure **
 
 **custom-mediawiki** - Helm Charts for Mediawiki web service (http & php)
 **custom-mysql** - Helm charts for mediawiki-db (mysql image used from dockerhub official repository)
