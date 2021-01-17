@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.service_name }}
+  namespace: {{ .Values.name_space }}
+spec:
+  type: NodePort
+  ports:
+  - port: {{ .Values.container_port }}
+    nodePort: {{ .Values.node_port }}
+    protocol: TCP
+    name: http
+  selector:
+    name: {{ .Values.deployment_name }}
+    tier: database

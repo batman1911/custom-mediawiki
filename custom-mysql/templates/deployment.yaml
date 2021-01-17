@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.deployment_name }}
+  namespace: {{ .Values.name_space }}
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      name: {{ .Values.deployment_name }}
+  template:
+    metadata:
+      labels:
+        name: {{ .Values.deployment_name }}
+        tier: database
+      annotations:
+        buildid: "{{ .Values.build_id }}"
+    spec:
+      hostname: {{ .Values.deployment_name }}
+      containers:
+      - name: {{ .Values.deployment_name }}
+        image: {{ .Values.image_id }}
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: {{ .Values.mysql_root_password }}
+        - name: MYSQL_DATABASE
+          value: {{ .Values.wiki_database }}
+        - name: MYSQL_USER
+          value: {{ .Values.wikidb_user }}
+        - name: MYSQL_PASSWORD
+          value: {{ .Values.wikidb_pass }}
+        ports:
+        - containerPort: {{ .Values.container_port }}
+        resources:
+          limits:
+            memory: {{ .Values.resources.limits.memory}} #"20Mi"
+            cpu: {{ .Values.resources.limits.cpu}} #"0.5"

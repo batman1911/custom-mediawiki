@@ -1,0 +1,14 @@
+replicas: 1
+deployment_name: mediawiki-db
+name_space: mediawiki
+image_id: mysql:latest
+container_port: 3306
+service_name: mediawiki-db
+node_port: 30405
+resources:
+  limits:
+    cpu: 0.5
+    memory: 20Mi
+  requests:
+    cpu: 0.5
+    memory: 20Mi

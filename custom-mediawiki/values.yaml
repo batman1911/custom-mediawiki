@@ -1,0 +1,13 @@
+replicas: 1
+deployment_name: mediawiki-frontend
+name_space: mediawiki
+container_port: 80
+service_name: mediawiki-frontend
+node_port: 30404
+resources:
+  limits:
+    cpu: 0.1
+    memory: 20Mi
+  requests:
+    cpu: 0.1
+    memory: 20Mi
