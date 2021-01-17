@@ -7,20 +7,20 @@ Currently this project is working using Docker containers. Creation of helm char
 
 2) Environment Details
 
-Operation System: Windows 10 (Docker Desktop 3.0.4)
-Docker version: 20.10.2
-Kubernetes version: v1.19.3
+Operation System: Windows 10 (Docker Desktop 3.0.4), 
+Docker version: 20.10.2, 
+Kubernetes version: v1.19.3.
 
 
 3) Folder Structure
 
-**custom-mediawiki** - Helm Charts for Mediawiki web service (http & php)
-**custom-mysql** - Helm charts for mediawiki-db (mysql image used from dockerhub official repository)
+**custom-mediawiki** - Helm Charts for Mediawiki web service (http & php).
+**custom-mysql** - Helm charts for mediawiki-db (mysql image used from dockerhub official repository).
 
 Note: The application is split into two assuming that it should be kept as a microservice rather than baked inside a single container image. 
 
 
-**Dockerfile** - To dockerize the mediawiki application
+**Dockerfile** - To dockerize the mediawiki application.
 
 **httpd.conf** - custom configuration file for httpd, To be passed during docker build.
 
@@ -36,5 +36,5 @@ The PHP-fpm service in Custom-mediawiki is not getting started when the image is
 
 5) Items pending
 
-Addition of PVC to MYSQL Helm charts
+Addition of PVC to MYSQL Helm charts.
 
