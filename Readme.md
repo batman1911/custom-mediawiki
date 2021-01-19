@@ -43,7 +43,7 @@ Run the Helm Charts using the following command from the project root folder.
 > helm install custom-mediawiki --set image_id="<your-docker-image-name-with-tag>" --set wiki_password="<the-password-you-like>" --set wikidb_root_password="<your-mysql-root-password>" .\custom-mediawiki\
 ``` 
 
-Helm should print the message similiar to the following.
+Helm should print the output similiar to the following.
 
 ```sh
 NAME: custom-mediawiki
