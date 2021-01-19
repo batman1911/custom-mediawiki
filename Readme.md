@@ -69,7 +69,7 @@ Contains the configurations required to start Http along with custom settings.
 Helm charts that can deploy mysql pod along with the Mediawiki app. While running the Helm install command, following arguments are to be passed to the Helm charts.
 1) wiki_password - mysql password for the db username wiki
 2) wikidb_root_password - mysql root password for the mysql database
-3) image_id - The image Id that you gave while creating the docker build.
+3) image_id - The image Id that was provided during the docker build.
 
 The wiki_password is required during installation of the mediawiki app in web browser.
 
