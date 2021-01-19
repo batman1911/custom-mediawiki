@@ -30,6 +30,12 @@ docker image <your-docker-image-name-with-tag>
 ### 2.Deploy the app using Helm Charts
 Run the Helm Charts using the following command from the project root folder
 
+Create a namespace in your Kubernetes cluster with the name "mediawiki" using kubectl.
+```sh
+> kubectl create ns mediawiki
+``` 
+In case you want to deploy this app to a different namespace, edit the two values.yaml files inside helm charts or include --set name_space="<your-namespace>" in the following helm install command.
+
 ```sh
 > cd custom-mediawiki
 
