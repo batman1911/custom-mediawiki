@@ -42,6 +42,19 @@ Run the Helm Charts using the following command from the project root folder.
 
 > helm install custom-mediawiki --set image_id="<your-docker-image-name-with-tag>" --set wiki_password="<the-password-you-like>" --set wikidb_root_password="<your-mysql-root-password>" .\custom-mediawiki\
 ``` 
+
+Helm should print the message similiar to the following.
+
+```sh
+NAME: custom-mediawiki
+LAST DEPLOYED: Tue Jan 19 19:58:42 2021
+NAMESPACE: mediawiki
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+```
+
+
 The above Helm chart will create the required Kubernetes pods and services to run the MediaWiki App.
 To test the application, try the url in your web-browser installed on your machine.
 
