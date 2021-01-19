@@ -24,7 +24,7 @@ Clone the project in your local system & switch to the project folder using comm
 ``` 
 Check if your docker image is created using the following command.
 ```sh
-docker image <your-docker-image-name-with-tag>
+docker image ls <your-docker-image-name-with-tag>
 ``` 
 
 ### 2.Deploy the app using Helm Charts
