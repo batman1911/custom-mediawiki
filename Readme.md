@@ -34,7 +34,7 @@ Create a namespace in your Kubernetes cluster with the name "mediawiki" using ku
 ```sh
 > kubectl create ns mediawiki
 ``` 
-In case you want to deploy this app to a different namespace, edit the two values.yaml files inside helm charts or include --set name_space="<your-namespace>" in the following helm install command.
+In case you want to deploy this app to a different namespace, edit the two values.yaml files inside helm charts or include --set name_space=<your-namespace> in the following helm install command.
 
 ```sh
 > cd custom-mediawiki
