@@ -64,7 +64,7 @@ http://IP-of-your-local-machine:30404/mediawiki
 
 Please note that for testing purpose, the Mediawiki app is allocated with a NodePort 30404 and Mysql with 30405. You can change these ports in the corresponding values.yaml files inside the helm charts.
 
-Once the browser opens the MediaWiki installation page, Verify the Installation.PDF to proceed with the next set of steps. To know more on how the deployment automation works, please read the below topic about folder structures.
+Once the browser opens the MediaWiki installation page, Verify the Mediawiki_setup.pdf to proceed with the next set of steps. To know more on how the deployment automation works, please read the below topic about folder structures.
 
 
 # Project Folder Structure
