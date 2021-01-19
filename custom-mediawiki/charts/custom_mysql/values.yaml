@@ -1,0 +1,21 @@
+#Values for MySql Deployment
+replicas: 1
+deployment_name: mediawiki-database
+name_space: mediawiki
+container_port: 3306
+service_name: mediawiki-database
+image_id: mysql:latest
+node_port: 30405
+resources:
+  limits:
+    cpu: 1
+    memory: 500Mi
+pv_host_path: "/D/mediawiki/mysql"
+pv_size: 10Gi
+pv_name: mysql-pv-volume
+pvc_name: local-mysql-claim
+pvc_size: 5Gi
+storage_class: "manual"
+pv_access_mode: ReadWriteOnce
+wiki_user: wiki
+wiki_db: wikidb

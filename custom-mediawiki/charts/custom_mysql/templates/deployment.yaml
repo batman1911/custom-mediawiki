@@ -17,21 +17,34 @@ spec:
         buildid: "{{ .Values.build_id }}"
     spec:
       hostname: {{ .Values.deployment_name }}
+      volumes:
+      - name: {{ .Values.pv_name }}
+        persistentVolumeClaim:
+            claimName: {{ .Values.pvc_name }}
       containers:
       - name: {{ .Values.deployment_name }}
         image: {{ .Values.image_id }}
         env:
         - name: MYSQL_ROOT_PASSWORD
-          value: {{ .Values.mysql_root_password }}
+          valueFrom:
+           secretKeyRef:
+            name: wiki-secrets
+            key: wikidb_root_password
         - name: MYSQL_DATABASE
-          value: {{ .Values.wiki_database }}
+          value: {{ .Values.wiki_db }}
         - name: MYSQL_USER
-          value: {{ .Values.wikidb_user }}
-        - name: MYSQL_PASSWORD
-          value: {{ .Values.wikidb_pass }}
+          value: "wiki"
+        - name: {{ .Values.wiki_user }}
+          valueFrom:
+           secretKeyRef:
+            name: wiki-secrets
+            key: wiki_password
         ports:
         - containerPort: {{ .Values.container_port }}
         resources:
           limits:
-            memory: {{ .Values.resources.limits.memory}} #"20Mi"
-            cpu: {{ .Values.resources.limits.cpu}} #"0.5"
+            memory: {{ .Values.resources.limits.memory}}
+            cpu: {{ .Values.resources.limits.cpu}}
+        volumeMounts:
+          - mountPath: "/var/lib/mysql"
+            name: {{ .Values.pv_name }}
