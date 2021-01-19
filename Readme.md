@@ -44,7 +44,9 @@ In case you want to deploy this app to a different namespace, edit the two value
 The above Helm chart will create the required Kubernetes pods and services to run the MediaWiki App.
 To test the application, try the url in your web-browser installed on your machine.
 
-http://<IP of your local machine>:30404
+```sh
+http://IP-of-your-local-machine:30404/mediawiki
+``` 
 
 Please note that for testing purpose, the Mediawiki app is allocated with a NodePort 30404 and Mysql with 30405. You can change these ports in the corresponding values.yaml files inside the helm charts.
 
