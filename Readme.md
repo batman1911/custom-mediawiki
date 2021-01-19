@@ -28,7 +28,7 @@ docker image ls <your-docker-image-name-with-tag>
 ``` 
 
 ### 2.Deploy the app using Helm Charts
-Run the Helm Charts using the following command from the project root folder
+
 
 Create a namespace in your Kubernetes cluster with the name "mediawiki" using kubectl.
 ```sh
@@ -36,8 +36,9 @@ Create a namespace in your Kubernetes cluster with the name "mediawiki" using ku
 ``` 
 In case you want to deploy this app to a different namespace, edit the two values.yaml files inside helm charts or include --set name_space=your-namespace in the following helm install command.
 
+Run the Helm Charts using the following command from the project root folder.
+
 ```sh
-> cd custom-mediawiki
 
 > helm install custom-mediawiki --set image_id="<your-docker-image-name-with-tag>" --set wiki_password="<the-password-you-like>" --set wikidb_root_password="<your-mysql-root-password>" .\custom-mediawiki\
 ``` 
