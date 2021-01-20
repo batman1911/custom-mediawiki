@@ -36,6 +36,8 @@ Create a namespace in your Kubernetes cluster with the name "mediawiki" using ku
 ``` 
 In case you want to deploy this app to a different namespace, edit the two values.yaml files inside helm charts or include --set name_space=your-namespace in the following helm install command.
 
+The MySql deployment inside the helm chart uses a hostpath from the machine to store persistent data of mysql. You should change this path before running the command to suit your environment. pv_host_path is the value to be changed in the file <project_root>/charts/custom-mysql/values.yaml.
+
 Run the Helm Charts using the following command from the project root folder.
 
 ```sh
@@ -90,7 +92,7 @@ The wiki_password is required during installation of the mediawiki app in web br
 ### Things to Note
 
 * The above project is focused in a way to make the Mediawiki project as a basic Microservice environment. 
-* Please check the Values.yaml files available in custom-mediawiki/values.yaml folder for mediawiki related parameters and custom-mediawiki/custom-mysql/values.yaml for verifying the mysql related parameters.
+* Please check the Values.yaml files available in custom-mediawiki/values.yaml folder for mediawiki related parameters and custom-mediawiki/charts/custom-mysql/values.yaml for verifying the mysql related parameters.
 
 * The Mysql environment is backed up with a persistent volume, but is configured using a host_path for testing purpose. On a production environment, this will be configured on a highly available storage clusters.
 
